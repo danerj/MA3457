@@ -1,0 +1,91 @@
+\documentclass[a4paper]{article}
+
+%% Language and font encodings
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+
+%% Sets page size and margins
+\usepackage[a4paper,top=3cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+%% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{float}
+\usepackage{enumerate}
+\usepackage{subfig}
+\setlength\parindent{0pt}
+\usepackage{amssymb}
+
+
+
+\makeatletter
+\def\moverlay{\mathpalette\mov@rlay}
+\def\mov@rlay#1#2{\leavevmode\vtop{%
+   \baselineskip\z@skip \lineskiplimit-\maxdimen
+   \ialign{\hfil$\m@th#1##$\hfil\cr#2\crcr}}}
+\newcommand{\charfusion}[3][\mathord]{
+    #1{\ifx#1\mathop\vphantom{#2}\fi
+        \mathpalette\mov@rlay{#2\cr#3}
+      }
+    \ifx#1\mathop\expandafter\displaylimits\fi}
+\makeatother
+
+\newcommand{\cupdot}{\charfusion[\mathbin]{\cup}{\cdot}}
+\newcommand{\bigcupdot}{\charfusion[\mathop]{\bigcup}{\cdot}}
+
+\pagenumbering{gobble}
+
+
+\begin{document}
+
+\section*{Conference 4}
+\subsection*{Numerical Differentiation: Optimal Step Size}
+\subsection*{Numerical Integration: Trapezoid Rule}
+
+\newpage
+
+\section*{Numerical Differentiation: Optimal Step Size}
+
+In class, the optimal step size $h$ for the centered difference approximation of $f'(x_0)$ with $\mathcal{O}(h^2)$ error was derived. Write a matlab program and create a graph that shows this theoretically optimal $h$ matches with the computations for the function $f(x) = x^2 \ln (x)$ at $x_0 = 2$. 
+
+\newpage
+
+\section*{Numerical Differentiation: Optimal Step Size}
+
+a. Derive the five-point midpoint approximation of $f'(x_0)$.
+
+\newpage
+
+b. Find the optimal $h$ that minimizes both the computational and truncation (Taylor) error in the five-point midpoint approximation of $f'(x_0)$. 
+
+\newpage
+
+c. For the function $f(x)=x^2\ln(x)$ evaluated at the point $x_0=2$, show that this theoretically optimal $h$ actually matches with the computations.
+
+\newpage
+
+\section*{Numerical Integration: Trapezoid Rule}
+
+a. Evaluate using the trapezoid rule with $x_0 = -1/4$, $x_1 = 1/4$.
+
+$$\int_{-1/4}^{1/4} \cos^2(x) \; dx \;.$$
+
+b. What is the actual error of the approximation in part a?\\
+
+c. What is the theoretical upper bound on the error of the approximation in part a?
+
+\newpage
+
+\section*{Numerical Integration: Trapezoid Rule}
+
+Assuming that the interval $[a,b]$ is divided evenly by the points $a = x_0 < x_1 < ... < x_N = b$ with step size $h$, develop a composite trapezoid rule for approximating $\int_a^b f(x) \; dx$. 
+
+
+
+
+
+
+\end{document}

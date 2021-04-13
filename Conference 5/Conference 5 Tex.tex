@@ -1,0 +1,65 @@
+\documentclass[a4paper]{article}
+
+%% Language and font encodings
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+
+%% Sets page size and margins
+\usepackage[a4paper,top=3cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+%% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{float}
+\usepackage{enumerate}
+\usepackage{subfig}
+\setlength\parindent{0pt}
+\usepackage{amssymb}
+
+
+
+\makeatletter
+\def\moverlay{\mathpalette\mov@rlay}
+\def\mov@rlay#1#2{\leavevmode\vtop{%
+   \baselineskip\z@skip \lineskiplimit-\maxdimen
+   \ialign{\hfil$\m@th#1##$\hfil\cr#2\crcr}}}
+\newcommand{\charfusion}[3][\mathord]{
+    #1{\ifx#1\mathop\vphantom{#2}\fi
+        \mathpalette\mov@rlay{#2\cr#3}
+      }
+    \ifx#1\mathop\expandafter\displaylimits\fi}
+\makeatother
+
+\newcommand{\cupdot}{\charfusion[\mathbin]{\cup}{\cdot}}
+\newcommand{\bigcupdot}{\charfusion[\mathop]{\bigcup}{\cdot}}
+
+\pagenumbering{gobble}
+
+
+\begin{document}
+
+\section*{Conference 5}
+\subsection*{Milne's Method}
+\subsection*{Time Stepping Techniques for an IVP}
+
+\newpage
+
+\subsection*{1. Milne's Method}
+
+Use the quadratic interpolant to $y'(t) = f(t,y(t))$ at $t_n,t_{n-1}, t_{n-2}$ to obtain the formula (for $n\geq 3$)
+
+$$ y_{n+1} = y_{n-3} + \frac{4h}{3}\left(2y_n' - y_{n-1}' + 2y_{n-2}' \right) + \mathcal{O}(h^5) \;. $$
+
+\newpage
+
+\subsection*{Time Stepping Techniques for an IVP}
+
+
+
+
+
+
+\end{document}
